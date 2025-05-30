@@ -2,7 +2,7 @@
 
 function displayPoem(response) {
   new Typewriter("#poem", {
-    strings: [response.data.answer], 
+    strings: response.data.answer, 
     autoStart: true,
     delay: 1,
     cursor: "",
@@ -17,6 +17,9 @@ function generatePoem(event) {
   let prompt = `User instructions: Generate a French poem about ${userInput.value}.sign the poem with<strong>'SheCode AL'</strong>at the end`;
   let apiKey = "0a744841eo85af43btc634f9048290bb";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+let peom1=document.querySelector(".peom");
+peom1.classList.remove("hidden");
+peom1.innerHTML=`⏳<div class='generating'>Generating a french poem for  <strong>${userInput.value}</strong></div>`;
 
   axios.get(apiUrl).then(displayPoem);
 }

@@ -17,14 +17,27 @@ h1{
 header{
     margin-bottom: 30px;
 }
-form{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.form-container{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 30px;
     background-color: white;
     border-radius: 10px;
-    display: flex;
     margin-bottom: 30px;
     box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+}
+form{
+    
+    display: flex;
+    
+}
+.hidden{
+    display: none;
+}
+.hint{
+    opacity: 0.30;
+    color: rgb(40, 3, 84);
+    font-size: 14px;
+    font-weight: 800px;
+    line-height: 1.5;
 }
 .peom strong{
     color: #885df1;
@@ -68,4 +81,18 @@ footer{
 }
 a{
     color:palevioletred
+}
+.generating {
+ animation: blink 0.5s step-start infinite;
+}
+@keyframes blink {
+ 0% {
+  opacity: 1;
+ }
+ 50% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+ }
 }
